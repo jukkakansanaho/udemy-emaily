@@ -1,0 +1,45 @@
+{
+  "name": "udemy-emaily",
+  "version": "1.0.0",
+  "description": "This is a study project for Udemy FullStackReactCode course.",
+  "main": "index.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.6.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev":
+      "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+    "heroku-postbuild":
+      "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "webhook": "./sendgrid_webhook.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.org/jukkakansanaho/udemy-emaily.git"
+  },
+  "author": {
+    "name": "Jukka Kansanaho",
+    "email": "jukka.kansanaho@gmail.com"
+  },
+  "license": "ISC",
+  "homepage": "https://github.org/jukkakansanaho/udemy-emaily#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.5.1",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.3",
+    "localtunnel": "^1.9.1",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.1.2",
+    "nodemon": "^1.17.4",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^4.2.0",
+    "sendgrid": "^5.2.3",
+    "stripe": "^6.1.1"
+  }
+}
